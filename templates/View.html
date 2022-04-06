@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Collect Data</title>
+    <title>View</title>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -36,51 +36,35 @@
           </div>
         </div>
       </nav>
-    <div class="container container">
-
+    <div class="container">
         <div class="row">
             <div class="col col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 col-xxl-12">
-                <form action="/register" method="post">
-                    <table>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">NAME</th>
+                        <th scope="col">COLLEGE NAME</th>
+                        <th scope="col">ADMISSION NO.</th>
+                        <th scope="col">BRANCH</th>
+                        <th scope="col">DOB</th>
+                        <th scope="col">USERNAME</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                     {% for row in students %}
                         <tr>
-                            <td> Student Name </td>
-                            <td><input type="text" name="sname" class="form-control" ></td>
+                            <th scope="row">{{row[0] }}</th>
+                            <td>{{ row[1] }}</td>
+                            <td>{{ row[2] }}</td>
+                            <td>{{ row[3] }}</td>
+                            <td>{{ row[4] }}</td>
+                            <td>{{ row[5] }}</td>
+                            <td>{{ row[6] }}</td>
                         </tr>
-                        <tr>
-                            <td> College Name </td>
-                            <td><input type="text" name="cname" class="form-control" ></td>
-                        </tr>
-                        <tr>
-                            <td> Admission Number </td>
-                            <td><input type="text" name="admno" class="form-control" ></td>
-                        </tr>
-                        <tr>
-                            <td> Branch </td>
-                            <td><input type="text"  name="branch" class="form-control" ></td>
-                        </tr>
-                        <tr>
-                            <td> DOB </td>
-                            <td><input type="date" name="dob" class="form-control"></td>
-                        </tr>
-                        <tr>
-                            <td> Username </td>
-                            <td><input type="text" name="username" class="form-control" ></td>
-                        </tr>
-                        <tr>
-                            <td> Password </td>
-                            <td><input type ="password" name="pswd" class="form-control"></td>
-                        </tr>
-                        <tr>
-                            <td></td>
-                            <td><button class = "btn btn-warning" type="submit" > SUBMIT </button></td>
-                        </tr>
-                        <tr>
-                            <td><a href="/">Go to Login Page</a></td>
-                        </tr>
-                    </table>
-
-                </form>
-            
+                     {% endfor %}
+                    </tbody>
+                  </table>
             </div>
         </div>
         
